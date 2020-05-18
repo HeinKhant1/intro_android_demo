@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class BasicTextViewActivity extends Activity {
 
@@ -12,6 +15,8 @@ public class BasicTextViewActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_basic_text_view);
 		Log.d("DEBUG", "onCreate was just called!");
+		AppCenter.start(getApplication(), "be77fb56-6600-4d00-97be-31282bcfbbd0",
+                 Analytics.class, Crashes.class);
 	}
 	
 	protected void onResume() {
